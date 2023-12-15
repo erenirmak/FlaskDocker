@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 from sqlalchemy import create_engine
-oracle_connection_string = "oracle+oracledb://BDCSTG:BDC2STG@10.100.5.126:1521/basakdwh"
+oracle_connection_string = f"{database}+{connector}://{user}:{password}@{host}:{port}/{SID}"
 oracle_engine = create_engine(oracle_connection_string)
 
 tarih = None
@@ -35,11 +35,11 @@ def download():
 def rapor():
     global df
     with oracle_engine.connect() as oracle_connection:
-        tablename = "DWH_HIZMETLER_GUNLUK"
-        query = f"""SELECT HIZMET as HIZMET, SUM(SAYI) MIKTAR FROM {tablename}
-                    WHERE BASLANGICTARIHI > TRUNC(CURRENT_DATE) - 2 AND
-                    BASLANGICTARIHI < TRUNC(CURRENT_DATE)
-                    GROUP BY HIZMET"""
+        tablename = "TABLE NAME"
+        query = f"""SELECT COL1, SUM(COL2) AMOUNT FROM {tablename}
+                    WHERE DATECOLUMN > TRUNC(CURRENT_DATE) - 2 AND
+                    DATECOLUMN < TRUNC(CURRENT_DATE)
+                    GROUP BY COLUMN"""
         df = pd.read_sql(query, oracle_connection)
     # Convert the dataframe to HTML
     table = df.to_html(index=False)
