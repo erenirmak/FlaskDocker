@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+	th {
+	    text-align: center;
+	}
+    </style>
+</head>
+<body>
+    <h1>Günlük Rapor</h1>
+    <p>Verilen hizmetlerin son 1 günlük raporudur.</p>
+    <!-- Display the table -->
+    {{ table|safe }}
+    <!-- Add the download button -->
+    <a href="{{ url_for('download') }}" class="btn btn-primary">Download Table</a>
+</body>
+</html>
+

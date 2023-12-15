@@ -1,0 +1,5 @@
+sqlalchemy
+oracledb
+flask
+pandas
+numpy
