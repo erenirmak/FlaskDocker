@@ -30,7 +30,7 @@ The queried table as CSV file is saved to /ReportLog folder when you click 'Down
 
 I know that the UI is pretty raw. This is my first experiment with Flask and still learning. :) I hope you forgive my minimalist UI ^^
 
-**Additional Notes:**
+### **Additional Notes:**
 
 You may need to configure timezone of the container:
 
