@@ -4,10 +4,10 @@ from sqlalchemy import create_engine
 import pandas as pd
 import os
 
-sqlsrv_connection_string = "mssql+pymssql://sa:e1r2e3n4@localhost:1433/Psychology"
+sqlsrv_connection_string = f"{database}+{connector}://{user}:{password}@{host}:{port}/{database}"
 sqlsrv_engine = create_engine(sqlsrv_connection_string)
 with sqlsrv_engine.connect() as sqlsrv_connection:
-    tablename = "client_id_info"
+    tablename = "YOUR TABLE"
     query = f"""SELECT * FROM {tablename}"""
     df = pd.read_sql(query, sqlsrv_connection)
     
