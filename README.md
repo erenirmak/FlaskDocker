@@ -18,9 +18,13 @@ If you want to deploy on Docker, run:
 > docker run -d -p 5000:5000 flask_daily_report
 
 In both options, you should be able to see the queried table at:
+
 http://localhost:5000/
+
 or
+
 http://127.0.0.1:5000/
+
 
 The queried table as CSV file is saved to /ReportLog folder when you click 'Download File' link. Otherwise, it is not generated automatically.
 
