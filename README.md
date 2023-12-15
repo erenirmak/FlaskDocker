@@ -14,6 +14,7 @@ If you don't want to deploy on Docker, just run:
 
 If you want to deploy on Docker, run:
 > docker build --tag flask_daily_report .
+
 > docker run -d -p 5000:5000 flask_daily_report
 
 In both options, you should be able to see the queried table at:
