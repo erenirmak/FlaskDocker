@@ -28,4 +28,20 @@ http://127.0.0.1:5000/
 
 The queried table as CSV file is saved to /ReportLog folder when you click 'Download File' link. Otherwise, it is not generated automatically.
 
-I know that the UI is pretty raw. This is my first experiment with Flask and still learning. :)
+I know that the UI is pretty raw. This is my first experiment with Flask and still learning. :) I hope you forgive my minimalist UI ^^
+
+**Additional Notes:**
+
+You may need to configure timezone of the container:
+
+To get container id:
+> docker ps
+
+To get inside the container:
+> docker exec -u 0 -it <CONTAINER_ID> bash
+
+Change the timezone (I used Europe/Istanbul for my case):
+> ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
+
+Check the time:
+> date
